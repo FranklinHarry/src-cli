@@ -9,7 +9,7 @@ import (
 	"github.com/sourcegraph/src-cli/internal/batches"
 )
 
-var errOptionalPublishedUnsupported = errors.New("This Sourcegraph version requires the published field to be specified in the batch spec; upgrade to be able to omit the published field and control publication from the UI.")
+var errOptionalPublishedUnsupported = errors.New(`This Sourcegraph version requires the "published" field to be specified in the batch spec; upgrade to be able to omit the published field and control publication from the UI.`)
 
 func createChangesetSpecs(task *Task, result executionResult, features batches.FeatureFlags) ([]*batches.ChangesetSpec, error) {
 	repo := task.Repository.Name
